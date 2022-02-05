@@ -1,7 +1,7 @@
 
 ### Hi there <img src="https://camo.githubusercontent.com/e8e7b06ecf583bc040eb60e44eb5b8e0ecc5421320a92929ce21522dbc34c891/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6876524a434c467a6361737252346961377a2f67697068792e676966" width="48px" height="48px" alt="hello emoji" />
 
-My name is Icaro Davi and I live in Brazil, I'm a self-taught web developer who loves to learn new things related to technologies, my goal is to improve my development skills and become an even better professional. 🤓
+My name is Icaro Davi and i live in Brazil, i'm a self-taught web developer who loves to learn new things related to technologies, my goal is to improve my development skills and become an even better professional. 🤓
 
 * I love participating in the dev community.
 * I like to seek new knowledge.
@@ -10,7 +10,7 @@ My name is Icaro Davi and I live in Brazil, I'm a self-taught web developer who 
 
 ### 🔗 Connect with me
 
-<a href="https://www.linkedin.com/in/icaro-davi/"><img alt="Icaro's LinkedIN" width="40px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" /></a> <a href="https://open.spotify.com/user/sw9pqgjuyza6g8r7oi2mqp9e5"><img alt="Icaro's Spotify" width="40px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/spotify.svg" /></a>
+<a href="https://www.linkedin.com/in/icaro-davi/"><img alt="Icaro's LinkedIN" width="40px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" /></a> <a href="https://open.spotify.com/user/sw9pqgjuyza6g8r7oi2mqp9e5"><img alt="Icaro's Spotify" width="40px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/spotify.svg" /></a> <a href="https://www.instagram.com/icaro_davi_/"><img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/40/000000/external-instagram-a-popular-social-networking-service-with-magic-filters-logo-color-tal-revivo.png"/></a>
 
 ### 🛠️ Languages and tools 
 
