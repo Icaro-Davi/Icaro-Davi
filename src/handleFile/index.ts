@@ -22,7 +22,7 @@ class GenerateFile {
         try {
             const subscribers = (await import('../json/subscribers.json')).default;
             if (!subscribers.some(subscriber => subscriber.username === newSubscriber.username)) {
-                subscribers.push(newSubscriber);
+                subscribers.unshift(newSubscriber);
                 fs.writeFileSync(this.subscriberFilePath, JSON.stringify(subscribers));
                 console.log('[GenerateFile] Subscribers updated.');
             } else {
@@ -47,7 +47,7 @@ class GenerateFile {
         try {
             const template = this.getTemplate();
             const subscribers = (await import('../json/subscribers.json')).default;
-            const markdownSubscribers = subscribers.reduce((prev, current, index) => `${prev}[@${current.username}](https://github.com/${current.username})`, '');
+            const markdownSubscribers = subscribers.reduce((prev, current, index) => `${prev}[@${current.username}](https://github.com/${current.username}) `, '### Subscribers\n\n');
             return `${template}\n<details>\n\t<summary>My visits ${subscribers.length}</summary>\n\n\t${markdownSubscribers}\n</details>`;
         } catch (error) {
             console.error('[GenerateFile] Failed to generate Markdown with subscribers.')
