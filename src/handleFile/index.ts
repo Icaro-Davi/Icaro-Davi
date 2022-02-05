@@ -47,8 +47,8 @@ class GenerateFile {
         try {
             const template = this.getTemplate();
             const subscribers = (await import('../json/subscribers.json')).default;
-            const markdownSubscribers = subscribers.reduce((prev, current, index) => `${prev}[@${current.username}](https://github.com/${current.username}) `, '### Subscribers\n\n');
-            return `${template}\n<details>\n\t<summary>My visits ${subscribers.length}</summary>\n\n\t${markdownSubscribers}\n</details>`;
+            const markdownSubscribers = subscribers.reduce((prev, current, index) => `${prev}[@${current.username}](https://github.com/${current.username}) `, '');
+            return `${template}\n<details>\n\t<summary>My visits ${subscribers.length}</summary>\n\n\t<p>${markdownSubscribers}</p>\n</details>`;
         } catch (error) {
             console.error('[GenerateFile] Failed to generate Markdown with subscribers.')
             throw error;
