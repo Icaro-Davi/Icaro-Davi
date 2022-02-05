@@ -20,13 +20,15 @@ class GenerateFile {
 
     static async updateSubscribers(newSubscriber: subscriber) {
         try {
-            const subscribers = (await import('../json/subscribers.json')).default;
-            if (!subscribers.some(subscriber => subscriber.username === newSubscriber.username)) {
+            const subscribers = (await import('../json/subscribers.json')).default as subscriber[];
+            if (!subscribers.some(subscriber => subscriber.id === newSubscriber.id)) {
                 subscribers.unshift(newSubscriber);
                 fs.writeFileSync(this.subscriberFilePath, JSON.stringify(subscribers));
                 console.log('[GenerateFile] Subscribers updated.');
             } else {
-                throw new Error('Subscriber already exists.');
+                subscribers[subscribers.findIndex(subscribe => subscribe.id === newSubscriber.id)] = newSubscriber;
+                fs.writeFileSync(this.subscriberFilePath, JSON.stringify(subscribers));
+                console.log('[GenerateFile] User updated.');
             }
         } catch (error) {
             console.error('[GenerateFile] Failed to update file "subscribers.json".');
@@ -43,12 +45,12 @@ class GenerateFile {
         }
     }
 
-    static async generateMarkdownWithSubscribers(){
+    static async generateMarkdownWithSubscribers() {
         try {
             const template = this.getTemplate();
-            const subscribers = (await import('../json/subscribers.json')).default;
+            const subscribers = (await import('../json/subscribers.json')).default as subscriber[];
             const markdownSubscribers = subscribers.reduce((prev, current, index) => `${prev}[@${current.username}](https://github.com/${current.username}) `, '');
-            return `${template}\n<details>\n\t<summary>My visits ${subscribers.length}</summary>\n\t<p>${markdownSubscribers}</p>\n</details>`;
+            return `${template}\n<details>\n\t<summary>There are ${subscribers.length} subscribers</summary>\n\n${markdownSubscribers}\n</details>`;
         } catch (error) {
             console.error('[GenerateFile] Failed to generate Markdown with subscribers.')
             throw error;
