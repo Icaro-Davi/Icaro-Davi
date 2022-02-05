@@ -1,22 +1,14 @@
+import 'dotenv/config';
 import GenerateFile from "./src/handleFile";
 
-/**
- * Get username from issue request in github actions.
- * Read JSON subscribers.
- * Check if username already exists in subscribers.
- * Append username to subscribers.
- * Update subscribers.JSON.
- * 
- * Create template for Markdown file.
- * Get updated subscribers.
- * Update README.md with new subscriber.
- * 
- * Update project using github actions.
- */
-
 async function init() {
-    // GenerateFile.createReadMe("Hello World :) updated");
-    // GenerateFile.updateSubscribers({username: 'teste-2'})
+    console.log(`[Init] Add new user "${process.env.MARKDOWN_NEW_SUBSCRIBER_USERNAME}"`);
+    GenerateFile.updateSubscribers({
+        // username: process.env.MARKDOWN_NEW_SUBSCRIBER_USERNAME || 'icaro-davi'
+        username: Math.random().toString(36).slice(2, 8),
+        createdAt: new Date().toJSON()
+    });
+    GenerateFile.createReadMe(await GenerateFile.generateMarkdownWithSubscribers());
 }
 
 init();
