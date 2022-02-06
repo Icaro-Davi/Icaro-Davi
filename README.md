@@ -20,10 +20,9 @@ My name is Icaro Davi and i live in Brazil, i'm a self-taught web developer who 
 
 ---
 
-### ❤️ [Save your visit to my list.](http://localhost:8080)
+### ❤️ [Save your visit to my list.](https://github.com/timburgan/timburgan/issues/new?title=Subscribe%20to%20my%20github%20%E2%9D%A4%EF%B8%8F&body=You%20don%27t%20need%20do%20anything%20just%20click%20in%20button%20%22Submit%20new%20issue%22)
 
 <details>
-	<summary>There are 2 subscribers</summary>
+	<summary>There are 0 subscribers</summary>
 
-[@Icaro-Davi](https://github.com/Icaro-Davi) [@teste3](https://github.com/teste3) 
 </details>
