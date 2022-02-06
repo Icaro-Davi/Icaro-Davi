@@ -1,0 +1,34 @@
+name: handle-subscriber
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  update-subscribers:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Subscribe')
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up env vars
+        run: |
+          echo "${{ github.event_name }}"
+          echo "MARKDOWN_NEW_SUBSCRIBER_USERNAME=${{ github.event.issue.user.login }}" >> $GITHUB_EVN
+      
+      - name: Install Node
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+              
+      - name: Install dependencies
+        run: yarn         
+      
+      - name: Build and generate README.md
+        run: yarn build && yarn start
+        
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update with latest subscribers
+        
