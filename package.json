@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "build": "node ./node_modules/typescript/bin/tsc -p ./tsconfig.json && copyfiles ./src/template/* ./dist",
-    "start": "node ./dist/index.js"
+    "start": "node ./index.js"
   },
   "dependencies": {
     "copyfiles": "^2.4.1",
