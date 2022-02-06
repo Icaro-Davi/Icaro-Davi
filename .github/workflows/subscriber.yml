@@ -14,7 +14,7 @@ jobs:
       - name: Set up env vars
         run: |
           echo "${{ github.event_name }}"
-          echo "MARKDOWN_NEW_SUBSCRIBER_USERNAME=${{ github.event.issue.user.login }}" >> $GITHUB_EVN
+          echo "MARKDOWN_NEW_SUBSCRIBER_USERNAME=${{ github.event.issue.user.login }}" >> $GITHUB_ENV
       
       - name: Install Node
         uses: actions/setup-node@v2
