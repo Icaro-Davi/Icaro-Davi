@@ -4,9 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node index.ts"
+    "dev": "ts-node index.ts",
+    "build": "node ./node_modules/typescript/bin/tsc -p ./tsconfig.json && copyfiles ./src/template/* ./dist",
+    "start": "node ./dist/index.js"
   },
   "dependencies": {
+    "copyfiles": "^2.4.1",
     "dotenv": "^16.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
