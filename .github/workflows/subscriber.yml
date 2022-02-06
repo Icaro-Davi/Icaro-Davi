@@ -17,7 +17,7 @@ jobs:
           echo "MARKDOWN_NEW_SUBSCRIBER_USERNAME=${{ github.event.issue.user.login }}" >> $GITHUB_EVN
       
       - name: Install Node
-      - uses: actions/setup-node@v2
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
               
